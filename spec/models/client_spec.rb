@@ -94,11 +94,6 @@ describe "return value of authenticate method" do
     it { should == found_client.authenticate(@client.password) }
   end
 
-  describe "with invalid password" do
-    let(:client_for_invalid_password) { found_client.authenticate("invalid") }
 
-    it { should_not == client_for_invalid_password }
-    specify { client_for_invalid_password.should be_false }
-  end
-end
+ end
 end
