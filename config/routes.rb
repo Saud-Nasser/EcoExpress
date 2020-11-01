@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get "clients/new"
+  resources :clients
   root to: 'static_pages#home'
+  get 'static_pages/home'
   
   get '/signup',  to: 'clients#new'
   # get 'static_pages/help'
