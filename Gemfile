@@ -21,6 +21,7 @@ gem 'protected_attributes_continued', '~> 1.6'
 gem 'therubyracer', '~> 0.12.3' , platforms: :ruby
 gem 'rvm', '~> 1.11', '>= 1.11.3.9'
 
+
 # Use Redis adapter to run Action Cable in production
 #gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
@@ -54,7 +55,8 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
-  gem 'capybara', '>= 2.15'
+  #gem 'capybara', '>= 2.15'
+  gem 'capybara', '~> 3.33'
   gem 'selenium-webdriver'
   gem 'railties', '~> 6.0', '>= 6.0.3.4'
   # Easy installation and use of web drivers to run system tests with browsers

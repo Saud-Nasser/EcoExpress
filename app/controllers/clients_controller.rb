@@ -9,6 +9,7 @@ class ClientsController < ApplicationController
   def create
     @client = Client.new(params[:client])
     if @client.save
+      sign_in @client
       flash[:success] = "Welcome to EcoExpress App!"
       redirect_to @client
 

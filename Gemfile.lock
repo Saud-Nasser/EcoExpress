@@ -255,7 +255,7 @@ DEPENDENCIES
   bootsnap (>= 1.4.2)
   bootstrap-sass (~> 3.4, >= 3.4.1)
   byebug
-  capybara (>= 2.15)
+  capybara (~> 3.33)
   factory_girl_rails (~> 4.9)
   javascript (~> 0.1.0)
   jbuilder (~> 2.7)

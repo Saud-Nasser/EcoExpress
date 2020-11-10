@@ -1,6 +1,18 @@
    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+   	  <script src="js/jquery-1.11.2.min.js"></script>
+   	    <script src="js/bootstrap.min.js"></script>
+    
+  	 <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+ 
+   
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': true %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': true %> 
+    <%= csrf_meta_tags %>
    	
-  <a class="navbar-brand" href="#">Signin</a>
+  <a class="navbar-brand" href="/signin">Signin</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -14,10 +26,27 @@
       <li class="nav-item active">
         <a class="nav-link" href= "/help">help</a>
       </li>
-      </li>
+      
       <li class="nav-item active">
-        <a class="nav-link" href="#">Delivery Times</a>
-
+        <a class="nav-link" href="#">Delivery Times</a> </li>
+        
+        <% if signed_in? %>
+          
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clients</a> 
+              	<b class="caret"></b>
+              <ul class="dropdown-menu" role= "menu">
+                <li><%= link_to "Profile", current_client %></li>
+                <li><%= link_to "Settings", '#' %></li>
+                <li class="divider"></li>
+                <li>
+                  <%= link_to "Sign out", signout_path, method: "delete" %>
+                </li>
+              </ul>
+            </li>
+          <% else %>
+            <li><%= link_to "Sign in", signin_path %></li>
+          <% end %>
     </ul>
     
   </div>

@@ -6,16 +6,18 @@
 #  email           :string
 #  name            :string
 #  password_digest :string
+#  remember_token  :string
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
 #
 # Indexes
 #
-#  index_clients_on_email  (email) UNIQUE
+#  index_clients_on_email           (email) UNIQUE
+#  index_clients_on_remember_token  (remember_token)
 #
 require 'rails_helper'
 
-RSpec.describe Client, type: :model do
+describe Client do
 
   before { @client = Client.new(name: "Example User", email: "user@example.com", password: "foobar", password_confirmation: "foobar") }
 
@@ -28,7 +30,9 @@ RSpec.describe Client, type: :model do
   it { should respond_to(:password_confirmation) }
   it { should be_valid }
   it { should respond_to(:authenticate) }
-
+  it { should respond_to(:password_confirmation) }
+  it { should respond_to(:remember_token) }
+  it { should respond_to(:authenticate) }
   describe "when name is not present" do
     before { @client.name = " " }
     it { should_not be_valid }
