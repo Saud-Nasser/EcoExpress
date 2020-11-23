@@ -3,10 +3,10 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
 
   root to: 'static_pages#home'
-  get 'static_pages/home'
+  get '/home', to: 'static_pages#home'
   get '/signup',    to: 'clients#new'
-  get '/signin',    to: 'sessions#new'
-  match '/signout',    to: 'sessions#destroy', via: :delete
+  get '/signin',    to: 'sessions#new', as: 'signin'
+  get '/signout',    to: 'sessions#destroy', via: :delete, as: 'signout'
   #match '/signup',  to: 'clients#new', via: [:get, :post]
   post '/signup',  to: 'clients#create'
 

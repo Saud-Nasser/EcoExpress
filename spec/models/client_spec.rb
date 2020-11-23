@@ -42,7 +42,7 @@ describe Client do
   end
   end
     describe "when name is too long" do
-    before { @client.name = "a" * 51 }
+    before { @client.name = "a" * 60 }
     it { should_not be_valid }
   end
     describe "when email format is invalid" do

@@ -43,4 +43,19 @@ describe "Client pages" do
       #end
    # end
   end
+   describe "edit" do
+    let(:client) { FactoryGirl.create(:client) }
+    before { visit edit_user_path(client) }
+
+    describe "page" do
+      it { should have_selector('h1',    text: "Update your profile") }
+      it { should have_selector('title', text: "Edit user") }
+    end
+
+    describe "with invalid information" do
+      before { click_button "Save changes" }
+
+      it { should have_content('error') }
+    end
+  end
 end
