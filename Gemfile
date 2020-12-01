@@ -61,6 +61,8 @@ group :test do
   gem 'railties', '~> 6.0', '>= 6.0.3.4'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'database_cleaner', '~> 1.8', '>= 1.8.5'
+  gem 'cucumber-rails', '~> 2.2', :require => false
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem

@@ -1,5 +1,5 @@
 class ClientsController < ApplicationController
-    before_filter :signed_in_client, only: [:edit, :update]
+    before_action :signed_in_client, only: [:edit, :update]
 
     def show
     @client = Client.find(params[:id])

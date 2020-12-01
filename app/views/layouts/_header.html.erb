@@ -38,25 +38,17 @@
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clients</a> 
               	<b class="caret"></b>
-<<<<<<< HEAD
+
             <div class="dropdown-menu" aria-labelledby="dropdown01">
             	<% if signed_in? %>
-                	 <a class="dropdown-item" href= "current_client" data-target="#" class="nav-link">Profile</a>
-                	 <a class="dropdown-item" href="#">Settings</a>
+                	 <%= link_to "Profile", client_path(current_client), class: "dropdown-item", id: "dropdown01" %>
+                	 <%= link_to "Settings", edit_client_path(current_client), class: "dropdown-item", id: "dropdown01" %>
                   <a class="dropdown-item" href= "/signout", method: "delete">Sign out</a>
               
 
-=======
-              <ul class="dropdown-menu" role= "menu">
-                <li><%= link_to "Profile", current_client %></li>
-                <li><%= link_to "Settings", edit_client_path(current_client) %></li>
-                <li class="divider"></li>
-                <li>
-                  <%= link_to "Sign out", signout_path, method: "delete" %>
-                </li>
-              </ul>
+
+
             </li>
->>>>>>> updating-clients
           <% else %>
             <a class="dropdown-item" href="/signin" data-target="#" class="nav-link">Sign in</a>
           <% end %>

@@ -9,7 +9,7 @@ module SessionsHelper
     !current_client.nil?
   end
   
-  def current_client=(client)
+  def current_client= (client)
     @current_client = client
   end
   
