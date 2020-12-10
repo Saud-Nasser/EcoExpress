@@ -8,7 +8,19 @@
 <%= f.label :Name %>
  <%= f.text_field :name, :placeholder => " Your Name" %> 
 <%= f.label :email %>
-<%= f.email_field :email, :placeholder => "Your Email Address" %> 
+<%= f.email_field :email, :placeholder => "Your Email Address" %>
+
+         <fieldset>
+          <p>
+             <label>Choose your District</label>
+             <select id = "client_district" name = "client[district]">
+               <option value = "Al-Dirah (old Riyadh)">Al-Dirah (old Riyadh)</option>
+               <option value = "Salam">Salam</option>
+               <option value = "Otayyigah">Otayyigah</option>
+              
+             </select>
+          </p>
+          </fieldset>
 <%= f.label :password %>
 <%= f.password_field :password, :placeholder => "Your Password" %>
 <%= f.label :password_confirmation %>

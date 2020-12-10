@@ -3,6 +3,7 @@
 # Table name: clients
 #
 #  id              :integer          not null, primary key
+#  district        :string
 #  email           :string
 #  name            :string
 #  password_digest :string
@@ -19,7 +20,7 @@ require 'rails_helper'
 
 describe Client do
 
-  before { @client = Client.new(name: "Example User", email: "user@example.com", password: "foobar", password_confirmation: "foobar") }
+  before { @client = Client.new(name: "Example User", email: "user@example.com",district: "Um alhammam", password: "foobar", password_confirmation: "foobar") }
 
   subject { @client }
 

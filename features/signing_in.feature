@@ -1,5 +1,8 @@
 Feature: Signing in
-
+As a client
+  I want to be able to sign in
+  So that I can access my account
+  
   Scenario: Unsuccessful signin
     Given a client visits the signin page
     When they submit invalid signin information

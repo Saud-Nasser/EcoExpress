@@ -8,15 +8,15 @@ describe "Client pages" do
    describe "profile page" do
     let(:client) { FactoryGirl.create(:client) }
     before { visit client_path(client) }
-    it { should have_selector('h1',    text: client.name) }
+    it { should have_content("Name") }
     
   end
 
   describe "signup page" do
     before { visit signup_path }
 
-    it { should have_selector('h1', text: 'Sign up') }
-    
+    it { should have_content("Name") }
+
   end
   describe "signup" do
 
@@ -49,7 +49,7 @@ describe "Client pages" do
     before { visit edit_client_path(client) }
     
     describe "page" do
-      it { should have_selector('h1',    text: "Update your profile") }
+      it { page.should have_content("Update your profile") }
       it { should have_selector('title', text: "Edit Client") }
     end
 
