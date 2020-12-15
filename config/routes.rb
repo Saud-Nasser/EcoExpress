@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :clients
+  resources :clients do
+    resources :orders 
+  end
   resources :sessions, only: [:new, :create, :destroy]
 
   root to: 'static_pages#home'
@@ -9,6 +11,7 @@ Rails.application.routes.draw do
   get '/signout',    to: 'sessions#destroy', via: :delete, as: 'signout'
   #match '/signup',  to: 'clients#new', via: [:get, :post]
   post '/signup',  to: 'clients#create'
+  get '/show',    to: 'clients#show'
   
   get '/districts',    to: 'static_pages#districts'
   get '/help',    to: 'static_pages#help'

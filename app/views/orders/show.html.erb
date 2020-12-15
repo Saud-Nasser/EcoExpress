@@ -1,0 +1,14 @@
+      <h2>Make Orders</h2>
+      <%= form_with model: [ @client, @client.orders.build ] do |form| %>
+  <p>
+    <%= form.label :pickup %><br>
+    <%= form.text_field :pickup %>
+  </p>
+  <p>
+    <%= form.label :details %><br>
+    <%= form.text_area :details %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+  <% end %>

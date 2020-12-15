@@ -17,6 +17,7 @@
 #  index_clients_on_remember_token  (remember_token)
 #
 class Client < ActiveRecord::Base
+  has_many :orders
   attr_accessible :name, :email, :district, :password, :password_confirmation
   has_secure_password
    before_save { |client| client.email = email.downcase }

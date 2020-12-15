@@ -1,4 +1,9 @@
 FactoryGirl.define do
+  factory :order do
+    pickup "MyString"
+    details "MyText"
+    client nil
+  end
   factory :client do
     name     {"Saud psau"}
     email    {"psau@example.com"}

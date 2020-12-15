@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_01_113233) do
+ActiveRecord::Schema.define(version: 2020_12_10_121949) do
 
   create_table "clients", force: :cascade do |t|
     t.string "name"
@@ -24,4 +24,14 @@ ActiveRecord::Schema.define(version: 2020_12_01_113233) do
     t.index ["remember_token"], name: "index_clients_on_remember_token"
   end
 
+  create_table "orders", force: :cascade do |t|
+    t.string "pickup"
+    t.text "details"
+    t.integer "client_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["client_id"], name: "index_orders_on_client_id"
+  end
+
+  add_foreign_key "orders", "clients"
 end
