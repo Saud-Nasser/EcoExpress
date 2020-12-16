@@ -6,7 +6,7 @@ class OrdersController < ApplicationController
   end
   def show
     @client = Client.find(params[:client_id])
-        @order = @client.order
+
   end
   private
     def order_params

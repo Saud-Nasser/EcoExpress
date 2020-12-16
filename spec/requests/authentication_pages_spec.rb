@@ -21,7 +21,7 @@ describe "Authentication" do
     end
   
       describe "with valid information" do
-      let(:client) { FactoryGirl.create(:client) }
+      let(:client) { FactoryBot.create(:client) }
       before do
         fill_in "Email",    with: client.email.upcase
         fill_in "Password", with: client.password

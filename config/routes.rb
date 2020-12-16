@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   resources :clients do
     resources :orders 
   end
+  
+  get '/orders/:client_id', to: 'orders#show'
+  resources :orders
   resources :sessions, only: [:new, :create, :destroy]
 
   root to: 'static_pages#home'
@@ -12,6 +15,7 @@ Rails.application.routes.draw do
   #match '/signup',  to: 'clients#new', via: [:get, :post]
   post '/signup',  to: 'clients#create'
   get '/show',    to: 'clients#show'
+  
   
   get '/districts',    to: 'static_pages#districts'
   get '/help',    to: 'static_pages#help'

@@ -35,7 +35,7 @@
         <a class="nav-link" href="/districts">Covered Districts</a> </li>
           	<% if signed_in? %>
           	<li class="nav-item active">
-          		<a class="nav-link" href="<%= client_path(current_client) %>">Order</a> </li>
+          		<a class="nav-link" href="/orders/<%= current_client.id %>" >Order</a> </li>
           <% end %>
                 
         

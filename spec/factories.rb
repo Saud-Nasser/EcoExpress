@@ -1,7 +1,7 @@
-FactoryGirl.define do
+FactoryBot.define do
   factory :order do
-    pickup "MyString"
-    details "MyText"
+    pickup {"SACO"}
+    details {"Morning"}
     client nil
   end
   factory :client do

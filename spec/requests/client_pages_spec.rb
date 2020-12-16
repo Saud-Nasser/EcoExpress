@@ -6,7 +6,7 @@ describe "Client pages" do
   subject { page }
   
    describe "profile page" do
-    let(:client) { FactoryGirl.create(:client) }
+    let(:client) { FactoryBot.create(:client) }
     before { visit client_path(client) }
     it { should have_content("Name") }
     
@@ -30,32 +30,25 @@ describe "Client pages" do
       end
     end
 
-    #describe "with valid information" do
-     # before do
-       # fill_in "name",         with: 'ahmed ali'
-      #  fill_in "Email",        with: "user@example.com"
-       # fill_in "Password",     with: "123456"
-        #fill_in "Confirmation", with: "123456"
-      #end
 
-     # it "should create a client" do
-      #  expect { click_button submit }.to change(Client, :count).by(1)
-      #end
-   # end
   end
   
-   describe "edit" do
-    let(:client) { FactoryGirl.create(:client) }
+   describe "edit client" do
+    let(:client) { FactoryBot.create(:client) }
     before { visit edit_client_path(client) }
     
+    let(:submit) { "Save changes" }
+    
     describe "page" do
-      it { page.should have_content("Update your profile") }
+      it { should have_content("Update your profile") }
       it { should have_selector('title', text: "Edit Client") }
     end
-
+    
+    
     describe "with invalid information" do
-      before { click_button "Save changes" }
       it { should have_content('error') }
+      before { click_button submit }
+      
     end
   end
 end
