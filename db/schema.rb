@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_10_121949) do
+ActiveRecord::Schema.define(version: 2020_12_17_080501) do
 
   create_table "clients", force: :cascade do |t|
     t.string "name"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 2020_12_10_121949) do
     t.string "password_digest"
     t.string "remember_token"
     t.string "district"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_clients_on_email", unique: true
     t.index ["remember_token"], name: "index_clients_on_remember_token"
   end

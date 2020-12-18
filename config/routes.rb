@@ -16,8 +16,10 @@ Rails.application.routes.draw do
   post '/signup',  to: 'clients#create'
   get '/show',    to: 'clients#show'
   
+  get '/clients/:id/set', to: 'clients#edit'
   
   get '/districts',    to: 'static_pages#districts'
+  get '/delivery_time',    to: 'static_pages#delivery_time'
   get '/help',    to: 'static_pages#help'
   get '/about',   to: 'static_pages#about'
   get '/contact', to: 'static_pages#contact'

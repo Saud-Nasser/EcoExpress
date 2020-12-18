@@ -18,24 +18,27 @@
     </tr>
       </tbody>
       </table>
+
       
-       <h2>Your Orders</h2>
+       <h1>Your Orders</h1>
 <table class="table table-hover">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">pickup</th>
+      
+      <th scope="col">Pickup</th>
       <th scope="col">Deliver to</th>
       <th scope="col">Details</th>
+      <th scope="col">Price</th>
     </tr>
   </thead>
   <tbody>
   	<% @client.orders.each do |order| %>
     <tr>
-      <th scope="row">1</th>
+     
       <td><%= order.pickup %></td>
       <td><%= @client.district %></td>
       <td><%= order.details %></td>
+      <td>20 SR</td>
     </tr>
     <% end %>
       </tbody>

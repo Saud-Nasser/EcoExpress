@@ -31,6 +31,9 @@ textarea {
 
 .center {
   text-align: center;
+    margin: auto;
+  width: 100%;
+  padding: 10px;
   h1 {
     margin-bottom: 10px;
   }
@@ -55,11 +58,11 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $lightGray;
+  color: $grayDarker;
 }
 
 p {
-  font-size: 1.1em;
+  font-size: 1.6em;
   line-height: 1.7em;
 }
 
@@ -88,9 +91,9 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid $grayMediumLight;
-  color: $lightGray;
+  color: $grayDarker;
   a {
-    color: $gray;
+    color: $grayDarker;
     &:hover {
       color: $grayDarker;
     }

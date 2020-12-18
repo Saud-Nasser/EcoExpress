@@ -20,7 +20,7 @@ gem 'activemodel', '~> 6.0', '>= 6.0.3.4'
 gem 'protected_attributes_continued', '~> 1.6'
 gem 'therubyracer', '~> 0.12.3' , platforms: :ruby
 gem 'rvm', '~> 1.11', '>= 1.11.3.9'
-
+gem 'figaro'
 
 # Use Redis adapter to run Action Cable in production
 #gem 'redis', '~> 4.0'

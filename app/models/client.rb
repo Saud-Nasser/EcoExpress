@@ -3,6 +3,7 @@
 # Table name: clients
 #
 #  id              :integer          not null, primary key
+#  admin           :boolean          default(FALSE)
 #  district        :string
 #  email           :string
 #  name            :string
@@ -18,7 +19,7 @@
 #
 class Client < ActiveRecord::Base
   has_many :orders
-  attr_accessible :name, :email, :district, :password, :password_confirmation
+  attr_accessible :name, :email, :district, :password, :password_confirmation, :admin
   has_secure_password
    before_save { |client| client.email = email.downcase }
    before_save :create_remember_token
@@ -33,4 +34,5 @@ class Client < ActiveRecord::Base
     def create_remember_token
       self.remember_token = SecureRandom.urlsafe_base64
     end
+
 end

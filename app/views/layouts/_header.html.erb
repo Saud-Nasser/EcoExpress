@@ -29,7 +29,7 @@
       </li>
       
       <li class="nav-item active">
-        <a class="nav-link" href="#">Delivery Times</a> </li>
+        <a class="nav-link" href="/delivery_time">Delivery Times</a> </li>
         
         <li class="nav-item active">
         <a class="nav-link" href="/districts">Covered Districts</a> </li>
@@ -37,21 +37,22 @@
           	<li class="nav-item active">
           		<a class="nav-link" href="/orders/<%= current_client.id %>" >Order</a> </li>
           <% end %>
-                
+                    	<% if signed_in? && (current_client.admin == true)  %>
+          	<li class="nav-item active">
+          		<a class="nav-link" href="<%= clients_path %>" >Clients</a> </li>
+          <% end %>
         
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Clients</a> 
+              <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">My Account</a> 
               	<b class="caret"></b>
 
             <div class="dropdown-menu" aria-labelledby="dropdown01">
             	<% if signed_in? %>
-                	 <%= link_to "Profile", client_path(current_client), class: "dropdown-item", id: "dropdown01" %>
+            
+                	 <%= link_to "My Profile", client_path(current_client), class: "dropdown-item", id: "dropdown01" %>
                 	 <%= link_to "Settings", edit_client_path(current_client), class: "dropdown-item", id: "dropdown01" %>
                   <a class="dropdown-item" href= "/signout", method: "delete">Sign out</a>
               
-
-
-
             </li>
           <% else %>
             <a class="dropdown-item" href="/signin" data-target="#" class="nav-link">Sign in</a>
@@ -65,12 +66,3 @@
     
   </div>
 </nav>
-
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="navbar-inner">
-    <div class="container">
-      <%= link_to "sample app", root_path, id: "logo" %>
-      
-    </div>
-  </div>
-</header>

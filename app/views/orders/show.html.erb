@@ -1,13 +1,29 @@
-      <h2>Make  new Orders</h2>
+      <h1>Make pick-up Order</h1>
+      <h2>*Our customer delivery cost inside Riyadh city 20 SR</h2>
       <%= form_with model: [ @client, @client.orders.build ] do |form| %>
-  <p>
-    <%= form.label :pickup %><br>
-    <%= form.text_field :pickup %>
-  </p>
+      <fieldset>
+          <p>
+             <label>Pick-up</label>
+             <select id = "order_pickup" name = "order[pickup]">
+               <option value = "SACO">SACO</option>
+               <option value = "IKEA">IKEA</option>
+               <option value = "ALQEFARI East">ALQEFARI East</option>
+               <option value = "TANZA">TANZA</option>
+               <option value = "Barq Alhya">Barq Alhya</option>
+              
+             </select>
+          </p>
+          </fieldset>
+
   <p>
     <%= form.label :details %><br>
     <%= form.text_area :details %>
   </p>
+
+  <div class="form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">*By Clicking submit you agree to delivery fee</label>
+  </div>
   <p>
     <%= form.submit %>
   </p>

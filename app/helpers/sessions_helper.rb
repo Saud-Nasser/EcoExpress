@@ -8,13 +8,18 @@ module SessionsHelper
   def signed_in?
     !current_client.nil?
   end
-  
+    def admin_user?
+      @current_client = client.admin
+       end
   def current_client= (client)
     @current_client = client
   end
   
    def current_client
     @current_client ||= Client.find_by_remember_token(cookies[:remember_token])
+  end
+  def current_client? (client)
+    client = current_client
   end
   def sign_out
     self.current_client = nil
