@@ -5,7 +5,7 @@ describe "Static pages" do
   
   describe "Home page" do
      before {visit root_path}
-      it {should have_selector('h1', text: 'Welcome to my Application') }
+      it {should have_selector('h1', text: 'Welcome to EcoExpress') }
     
   end 
   
@@ -19,7 +19,7 @@ describe "Help page" do
  describe "About page" do
 
       before { visit about_path }
-      it { should have_selector('h1', text: 'About Us')}
+      it { should have_selector('h1', text: 'About us')}
     
   end
   

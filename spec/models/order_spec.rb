@@ -2,12 +2,12 @@
 #
 # Table name: orders
 #
-#  id         :integer          not null, primary key
+#  id         :bigint           not null, primary key
 #  details    :text
 #  pickup     :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  client_id  :integer          not null
+#  client_id  :bigint           not null
 #
 # Indexes
 #
@@ -15,7 +15,7 @@
 #
 # Foreign Keys
 #
-#  client_id  (client_id => clients.id)
+#  fk_rails_...  (client_id => clients.id)
 #
 require 'rails_helper'
 

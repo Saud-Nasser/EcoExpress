@@ -52,5 +52,5 @@ Then /^they should see an error messages$/ do
       page.should have_content(@client.name)
     end
       Then /^they should see a settings link$/ do
-   page.should have_link('Settings', href: edit_client_path)     
+   page.should have_link('Settings', href: edit_client_path(current_client))     
 end

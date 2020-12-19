@@ -2,7 +2,7 @@
 #
 # Table name: clients
 #
-#  id              :integer          not null, primary key
+#  id              :bigint           not null, primary key
 #  admin           :boolean          default(FALSE)
 #  district        :string
 #  email           :string
