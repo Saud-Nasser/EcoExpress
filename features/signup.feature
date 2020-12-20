@@ -10,7 +10,7 @@ Feature: Sign up
 
   Scenario: Successful signup
     Given a client visits the signup page
-      And the client fills in the information
+      And the client filled in the information
     When the client submits valid signup information
-    Then they should see their settings page
-      And they should see a signout link
+    Then client should see his name and email in the page
+      And he should see his district
