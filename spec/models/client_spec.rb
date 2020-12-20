@@ -21,7 +21,7 @@ require 'rails_helper'
 
 describe Client do
 
-  before { @client = Client.new(name: "Example User", email: "user@example.com",district: "Um alhammam", password: "foobar", password_confirmation: "foobar") }
+  before { @client = Client.new(name: "Example User", email: "user@example.com",district: "Um alhammam", password: "saud9988", password_confirmation: "saud9988") }
 
   subject { @client }
 
